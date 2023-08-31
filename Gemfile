@@ -17,7 +17,7 @@ gem 'faker', '~> 2.18.0'
 gem 'aws-sdk-s3', require: false
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 # gem "jbuilder"
-
+gem 'listen', '~> 3.5'
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
