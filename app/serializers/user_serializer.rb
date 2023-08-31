@@ -1,3 +1,4 @@
 class UserSerializer < ActiveModel::Serializer
-  attributes :id
+  has_many :builds
+  attributes :id, :email, :username, :favorite_hero
 end
