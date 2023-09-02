@@ -8,6 +8,7 @@ User.destroy_all
 Build.destroy_all
 BuildItem.destroy_all
 Item.destroy_all
+Hero.destroy_all
 
 User.create([
     {
