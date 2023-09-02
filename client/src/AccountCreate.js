@@ -34,7 +34,7 @@ console.log(initialValues)
       body: JSON.stringify(values),
     }).then((res) => {
       if (res.ok) {
-        alert("Admin Created, please login to continue");
+        alert("Account Created! Start designing your builds!");
         navigate("/UserDash");
         res.json().then((user) => setUser(user));
       } else {
