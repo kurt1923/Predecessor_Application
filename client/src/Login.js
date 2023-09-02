@@ -32,6 +32,7 @@ const Login = () => {
         email: data.get("email").toLowerCase(),
         password: data.get("password"),
       }),
+      
     }).then((res) => {
       if (res.ok) {
         res.json().then((user) => setUser(user));

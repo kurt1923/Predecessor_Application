@@ -1,14 +1,20 @@
 class SessionsController < ApplicationController
 
     def create
-        user = User.find_by(email: params[:email])
+        # Downcase the email from the request
+        email = params[:email].downcase
+      
+        # Find the user by downcased email
+        user = User.find_by("LOWER(email) = ?", email)
+      
         if user && user.authenticate(params[:password])
-            session[:user_id] = user.id 
-            render json: user
+          session[:user_id] = user.id 
+          render json: user
         else
-            render json: { errors: ["Invalid email or password"] }, status: :unauthorized
+          Rails.logger.error("Login failed for email: #{email}")
+          render json: { errors: ["Invalid email or password"] }, status: :unauthorized
         end
-    end
+      end
 
     def destroy
         session.delete :user_id
